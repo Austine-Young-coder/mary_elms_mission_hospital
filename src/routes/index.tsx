@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, Star, Stethoscope, HeartPulse, Baby, Ambulance, Microscope, Pill } from "lucide-react";
+import { Phone, MapPin, Clock, Star, Stethoscope, HeartPulse, Baby, Ambulance, Microscope, Pill, CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Toaster } from "@/components/ui/sonner";
+import { BookAppointment } from "@/components/BookAppointment";
 import heroImg from "@/assets/hospital-hero.jpg";
 import careImg from "@/assets/hospital-care.jpg";
 import receptionImg from "@/assets/hospital-reception.jpg";
@@ -40,11 +42,12 @@ function Index() {
           <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
             <a href="#services" className="hover:text-foreground transition">Services</a>
             <a href="#about" className="hover:text-foreground transition">About</a>
+            <a href="#appointment" className="hover:text-foreground transition">Book</a>
             <a href="#visit" className="hover:text-foreground transition">Visit</a>
             <a href="#contact" className="hover:text-foreground transition">Contact</a>
           </nav>
           <Button asChild size="sm">
-            <a href="tel:+2348036151096"><Phone className="w-4 h-4 mr-1" /> Call</a>
+            <a href="#appointment"><CalendarCheck className="w-4 h-4 mr-1" /> Book</a>
           </Button>
         </div>
       </header>
@@ -67,10 +70,10 @@ function Index() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-              <a href="tel:+2348036151096"><Phone className="w-4 h-4 mr-2" /> +234 803 615 1096</a>
+              <a href="#appointment"><CalendarCheck className="w-4 h-4 mr-2" /> Book Appointment</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
-              <a href="#visit"><MapPin className="w-4 h-4 mr-2" /> Get Directions</a>
+              <a href="tel:+2348036151096"><Phone className="w-4 h-4 mr-2" /> +234 803 615 1096</a>
             </Button>
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-white/80">
@@ -133,6 +136,26 @@ function Index() {
         </div>
       </section>
 
+      {/* Appointment */}
+      <section id="appointment" className="py-24 max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="lg:sticky lg:top-24">
+            <p className="text-sm uppercase tracking-widest text-primary font-medium">Book an appointment</p>
+            <h2 className="text-3xl md:text-4xl font-bold mt-3">Schedule a visit that works for you.</h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              Tell us a little about your needs and preferred time. Our team will call you back shortly to confirm
+              your appointment and answer any questions.
+            </p>
+            <ul className="mt-8 space-y-4 text-sm">
+              <li className="flex gap-3"><Clock className="w-5 h-5 text-primary shrink-0" /><span>Same-day and walk-in appointments available 24/7.</span></li>
+              <li className="flex gap-3"><HeartPulse className="w-5 h-5 text-primary shrink-0" /><span>For emergencies, please call us directly — no booking needed.</span></li>
+              <li className="flex gap-3"><CalendarCheck className="w-5 h-5 text-primary shrink-0" /><span>Confirmation call within a few hours of your request.</span></li>
+            </ul>
+          </div>
+          <BookAppointment />
+        </div>
+      </section>
+
       {/* Visit */}
       <section id="visit" className="py-24 bg-secondary/40 border-y border-border">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
@@ -173,6 +196,7 @@ function Index() {
           © {new Date().getFullYear()} Mary Elms Mission Hospital Onitsha. All rights reserved.
         </p>
       </footer>
+      <Toaster richColors position="top-center" />
     </div>
   );
 }
