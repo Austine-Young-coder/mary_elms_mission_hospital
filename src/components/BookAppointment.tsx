@@ -52,6 +52,10 @@ export function BookAppointment() {
       toast.error(result.error.issues[0].message);
       return;
     }
+    if (result.data.date && result.data.date < today) {
+      toast.error("Please select today or a future date.");
+      return;
+    }
     setSubmitted(true);
     toast.success("Appointment request received. We'll call to confirm shortly.");
   }
@@ -107,7 +111,7 @@ export function BookAppointment() {
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
-            <Calendar mode="single" selected={date} onSelect={setDate} disabled={(d) => d < today} initialFocus className={cn("p-3 pointer-events-auto")} />
+            <Calendar mode="single" selected={date} onSelect={setDate} initialFocus className={cn("p-3 pointer-events-auto")} />
           </PopoverContent>
         </Popover>
       </Field>
