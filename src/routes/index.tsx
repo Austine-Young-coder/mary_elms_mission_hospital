@@ -70,10 +70,10 @@ function Index() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-              <a href="tel:+2348036151096"><Phone className="w-4 h-4 mr-2" /> +234 803 615 1096</a>
+              <a href="#appointment"><CalendarCheck className="w-4 h-4 mr-2" /> Book Appointment</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
-              <a href="#visit"><MapPin className="w-4 h-4 mr-2" /> Get Directions</a>
+              <a href="tel:+2348036151096"><Phone className="w-4 h-4 mr-2" /> +234 803 615 1096</a>
             </Button>
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-white/80">
