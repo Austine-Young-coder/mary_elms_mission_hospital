@@ -1,4 +1,4 @@
 {
-  "buildCommand": "bun run build",
-  "outputDirectory": ".output/public"
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }
