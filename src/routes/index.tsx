@@ -42,11 +42,12 @@ function Index() {
           <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
             <a href="#services" className="hover:text-foreground transition">Services</a>
             <a href="#about" className="hover:text-foreground transition">About</a>
+            <a href="#appointment" className="hover:text-foreground transition">Book</a>
             <a href="#visit" className="hover:text-foreground transition">Visit</a>
             <a href="#contact" className="hover:text-foreground transition">Contact</a>
           </nav>
           <Button asChild size="sm">
-            <a href="tel:+2348036151096"><Phone className="w-4 h-4 mr-1" /> Call</a>
+            <a href="#appointment"><CalendarCheck className="w-4 h-4 mr-1" /> Book</a>
           </Button>
         </div>
       </header>
