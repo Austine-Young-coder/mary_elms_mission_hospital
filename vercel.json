@@ -1,7 +1,6 @@
 {
   "buildCommand": "bun run build",
   "outputDirectory": ".output/public",
-  "nodeVersion": "20.x",
   "functions": {
     "src/server.ts": {
       "runtime": "nodejs20.x"
