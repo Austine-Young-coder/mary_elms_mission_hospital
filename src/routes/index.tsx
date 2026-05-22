@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, Star, Stethoscope, HeartPulse, Baby, Ambulance, Microscope, Pill } from "lucide-react";
+import { Phone, MapPin, Clock, Star, Stethoscope, HeartPulse, Baby, Ambulance, Microscope, Pill, CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Toaster } from "@/components/ui/sonner";
+import { BookAppointment } from "@/components/BookAppointment";
 import heroImg from "@/assets/hospital-hero.jpg";
 import careImg from "@/assets/hospital-care.jpg";
 import receptionImg from "@/assets/hospital-reception.jpg";
