@@ -196,6 +196,7 @@ function Index() {
           © {new Date().getFullYear()} Mary Elms Mission Hospital Onitsha. All rights reserved.
         </p>
       </footer>
+      <Toaster richColors position="top-center" />
     </div>
   );
 }
