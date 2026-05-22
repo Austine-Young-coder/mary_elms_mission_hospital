@@ -136,6 +136,26 @@ function Index() {
         </div>
       </section>
 
+      {/* Appointment */}
+      <section id="appointment" className="py-24 max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="lg:sticky lg:top-24">
+            <p className="text-sm uppercase tracking-widest text-primary font-medium">Book an appointment</p>
+            <h2 className="text-3xl md:text-4xl font-bold mt-3">Schedule a visit that works for you.</h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              Tell us a little about your needs and preferred time. Our team will call you back shortly to confirm
+              your appointment and answer any questions.
+            </p>
+            <ul className="mt-8 space-y-4 text-sm">
+              <li className="flex gap-3"><Clock className="w-5 h-5 text-primary shrink-0" /><span>Same-day and walk-in appointments available 24/7.</span></li>
+              <li className="flex gap-3"><HeartPulse className="w-5 h-5 text-primary shrink-0" /><span>For emergencies, please call us directly — no booking needed.</span></li>
+              <li className="flex gap-3"><CalendarCheck className="w-5 h-5 text-primary shrink-0" /><span>Confirmation call within a few hours of your request.</span></li>
+            </ul>
+          </div>
+          <BookAppointment />
+        </div>
+      </section>
+
       {/* Visit */}
       <section id="visit" className="py-24 bg-secondary/40 border-y border-border">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
