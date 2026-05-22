@@ -193,7 +193,7 @@ function Index() {
           </Button>
         </div>
         <p className="text-center text-xs text-muted-foreground mt-10">
-          © {new Date().getFullYear()} Mary Elms Mission Hospital Onitsha. All rights reserved.
+          © 2026 Mary Elms Mission Hospital Onitsha. All rights reserved.
         </p>
       </footer>
       <Toaster richColors position="top-center" />

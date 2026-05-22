@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { z } from "zod";
 import { CalendarIcon, CheckCircle2, Phone } from "lucide-react";
 import { format } from "date-fns";
@@ -26,6 +26,11 @@ const departments = ["General Medicine", "Emergency Care", "Maternity & Pediatri
 const times = ["08:00", "09:00", "10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00"];
 
 export function BookAppointment() {
+  const today = useMemo(() => {
+    const d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }, []);
   const [date, setDate] = useState<Date | undefined>();
   const [department, setDepartment] = useState("");
   const [time, setTime] = useState("");
@@ -45,6 +50,10 @@ export function BookAppointment() {
     });
     if (!result.success) {
       toast.error(result.error.issues[0].message);
+      return;
+    }
+    if (result.data.date && result.data.date < today) {
+      toast.error("Please select today or a future date.");
       return;
     }
     setSubmitted(true);
@@ -102,7 +111,7 @@ export function BookAppointment() {
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
-            <Calendar mode="single" selected={date} onSelect={setDate} disabled={(d) => d < new Date(new Date().setHours(0,0,0,0))} initialFocus className={cn("p-3 pointer-events-auto")} />
+            <Calendar mode="single" selected={date} onSelect={setDate} initialFocus className={cn("p-3 pointer-events-auto")} />
           </PopoverContent>
         </Popover>
       </Field>
